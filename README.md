@@ -3,7 +3,7 @@
 react-ease
 ---
 
-(back to first principles)
+back to first principles
 
 `npm install react-ease react --save`
 
@@ -51,9 +51,9 @@ props
 - from: *number*/*object*
 - to: *number*/*object*
 - duration: *number* (ms)
-- ease: *string*/*function* `./src.js` has a list of available easing functions, or you can pass in your own
+- ease: *string*/*function* `./src.js` has a list of available easing functions, or pass in your own
 - delay: *number* (ms)
-- todo - repeat: *number* (`Infinity` for infinite repeats)
+- TODO - repeat: *number*
 
 thanks
 ---
