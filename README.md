@@ -26,10 +26,10 @@ canned animations for [react](https://facebook.github.io/react/)/[react-native](
 </Ease>
 
 // or if you want more control over each value
-<Ease from={0} to={100} duration={500}>{ x =>
-    <Ease from={0} to={100} duration={200} onProgress={::console.log}>{ y =>
-        <div style={{left: x, top: y}}>not bad!</div>}
-    </Ease>}
+<Ease from={0} to={100} duration={500}>{x =>
+  <Ease from={0} to={100} duration={200} onProgress={::console.log}>{y =>
+    <div style={{left: x, top: y}}>not bad!</div>}
+  </Ease>}
 </Ease>
 
 // finally, you can chain a bunch of them together
