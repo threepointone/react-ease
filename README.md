@@ -38,7 +38,7 @@ canned animations for [react](https://facebook.github.io/react/)/[react-native](
 <Chain sequence={[
   {from: {left: 0, top: 0, opacity: 1}, to: {left: 100, top: 100}},
   {from: {left: 50}, to: {top: 50}, ease: 'easeOutCubic'},
-  {to: {opacity: 0}, duration: 500, delay: 200}]}>
+  {to: {opacity: 0}, duration: 500, delay: 200}]} onProgress={(val, done) => done && console.log('done!')}>
     {(val, done) => <div style={val}>sweet!</div>}
 </Chain>
 
