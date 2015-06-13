@@ -9,7 +9,7 @@ back to first principles
 
 canned animations for [react](https://facebook.github.io/react/)/[react-native](https://facebook.github.io/react-native/)
 
-(if you're looking for somethong more dynamic, consider [react-springs](https://github.com/threepointone/react-springs))
+(if you're looking for something more dynamic, consider [react-springs](https://github.com/threepointone/react-springs))
 
 ```js
 // output floats from 0 to 100 over 0.5 seconds
