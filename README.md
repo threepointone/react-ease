@@ -30,7 +30,7 @@ canned animations for [react](https://facebook.github.io/react/)/[react-native](
   {x =>
     <Ease from={0} to={100} duration={200} onProgress={::console.log}>
       {y =>
-      <div style={{left: x, top: y}}>not bad!</div>}
+        <div style={{left: x, top: y}}>not bad!</div>}
     </Ease>}
 </Ease>
 
