@@ -360,7 +360,7 @@ export const Chain = React.createClass({
         index: allDone ? this.state.index : this.state.index + 1,
         done: allDone,
         value: value,
-        from: mergeable ? {...value, ...(props.from || {})} : value,
+        from: mergeable ? {...value, ...(props.from || {})} : (props.from !== undefined ? props.from : value),
         to: mergeable ? {...value, ...(props.to || {})} : props.to
       });
     }
@@ -368,9 +368,11 @@ export const Chain = React.createClass({
   render(){
     let props = this.props.sequence[this.state.index];
     let fn = val => this.props.children(val, this.state.done);
-    return this.state.done ? fn(this.state.value, true) : <Ease {...props} key={this.state.index} onProgress={this.onProgress} from={this.state.from} to={this.state.to}>
-      {fn}
-    </Ease>;
+    return this.state.done ?
+      fn(this.state.value, true) :
+      <Ease {...props} key={this.state.index} onProgress={this.onProgress} from={this.state.from} to={this.state.to}>
+        {fn}
+      </Ease>;
   }
 });
 

@@ -399,7 +399,7 @@ var Chain = React.createClass({
         index: allDone ? this.state.index : this.state.index + 1,
         done: allDone,
         value: value,
-        from: mergeable ? _extends({}, value, props.from || {}) : value,
+        from: mergeable ? _extends({}, value, props.from || {}) : props.from !== undefined ? props.from : value,
         to: mergeable ? _extends({}, value, props.to || {}) : props.to
       });
     }
