@@ -21,7 +21,7 @@ canned animations for [react](https://facebook.github.io/react/)/[react-native](
 </Ease>
 
 // you can ease multiple values at once
-<Ease from={{x: 0, y: 0}} to={{x: 100, y: 100}} ease='easeInElastic'>
+<Ease from={{left: 0, top: 0}} to={{left: 100, top: 100}} ease='easeInElastic'>
   {val => <div style={val}>move it, move it</div>}
 </Ease>
 
