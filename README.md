@@ -53,6 +53,7 @@ props
 - duration: *number* (ms)
 - ease: *string*/*function* `./src.js` has a list of available easing functions, or pass in your own
 - delay: *number* (ms)
+- onProgress: *function* - optional callback called on every 'movement'. 'returns' the current value, and a `done` flag
 - TODO - repeat: *number*
 
 thanks
