@@ -47,13 +47,13 @@ canned animations for [react](https://facebook.github.io/react/)/[react-native](
 
 props
 ---
-from: *number*/*object*
-to: *number*/*object*
-duration: *number* (ms)
-ease: *string*/*function* `./src.js` has a list of available easing functions, or you can pass in your own
-delay: *number* (ms)
 
-todo - repeat: *number* (`Infinity` for infinite repeats)
+- from: *number*/*object*
+- to: *number*/*object*
+- duration: *number* (ms)
+- ease: *string*/*function* `./src.js` has a list of available easing functions, or you can pass in your own
+- delay: *number* (ms)
+- todo - repeat: *number* (`Infinity` for infinite repeats)
 
 thanks
 ---
