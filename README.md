@@ -47,7 +47,7 @@ canned animations for [react](https://facebook.github.io/react/)/[react-native](
 
 ```
 
-props
+Ease::props
 ---
 
 - from: *number*/*object*
@@ -56,6 +56,12 @@ props
 - ease: *string*/*function* `./src.js` has a list of available easing functions, or pass in your own
 - delay: *number* (ms)
 - onProgress: *function* - optional callback called on every 'movement'. 'returns' the current value, and a `done` flag
+- repeat: *number*
+
+Chain::props
+---
+
+- sequence: *array*
 - repeat: *number*
 
 thanks
