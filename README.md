@@ -36,9 +36,11 @@ canned animations for [react](https://facebook.github.io/react/)/[react-native](
 
 // finally, you can chain a bunch of them together
 <Chain sequence={[
-  {from: {left: 0, top: 0, opacity: 1}, to: {left: 100, top: 100}},
-  {from: {left: 50}, to: {top: 50}, ease: 'easeOutCubic'},
-  {to: {opacity: 0}, duration: 500, delay: 200}]} onProgress={(i, val, done) => done && console.log('done!')}>
+    {from: {left: 0, top: 0, opacity: 1}, to: {left: 100, top: 100}},
+    {from: {left: 50}, to: {top: 50}, ease: 'easeOutCubic'},
+    {to: {opacity: 0}, duration: 500, delay: 200}]}
+  onProgress={(i, val, done) => done && console.log('done!')}
+  repeat={5}>
     {(val, done) => <div style={val}>sweet!</div>}
 </Chain>
 
@@ -54,7 +56,7 @@ props
 - ease: *string*/*function* `./src.js` has a list of available easing functions, or pass in your own
 - delay: *number* (ms)
 - onProgress: *function* - optional callback called on every 'movement'. 'returns' the current value, and a `done` flag
-- TODO - repeat: *number*
+- repeat: *number*
 
 thanks
 ---

@@ -27,6 +27,14 @@ var raf = root.requestAnimationFrame || root.webkitRequestAnimationFrame || root
 exports.raf = raf;
 var noop = function noop() {};
 
+function times(n, fn) {
+  var arr = [];
+  for (var i = 0; i < n; i++) {
+    arr.push(fn(i));
+  }
+  return arr;
+}
+
 // penner's easing equations
 var easings = {
   'default': 'easeOutQuad',
@@ -235,7 +243,6 @@ var defaults = {
   to: 0,
   duration: 1000,
   ease: easings[easings['default']],
-  repeat: 1,
   onProgress: noop,
   delay: 0
 };
@@ -376,7 +383,8 @@ var Chain = React.createClass({
 
   getDefaultProps: function getDefaultProps() {
     return {
-      onProgress: noop
+      onProgress: noop,
+      repeat: 1
     };
   },
   propTypes: {
@@ -385,9 +393,16 @@ var Chain = React.createClass({
     onProgress: React.PropTypes.func
   },
   getInitialState: function getInitialState() {
+    var _this3 = this;
+
     var props = this.props.sequence[0];
     return {
       index: 0,
+      sequence: times(this.props.repeat, function () {
+        return _this3.props.sequence;
+      }).reduce(function (arr, el) {
+        return arr.concat(el);
+      }),
       done: false,
       value: props.from,
       from: props.from,
@@ -402,8 +417,8 @@ var Chain = React.createClass({
     this.props.onProgress(this.state.index, value, done);
 
     if (done) {
-      var allDone = this.state.index === this.props.sequence.length - 1;
-      var props = this.props.sequence[this.state.index + 1] || {};
+      var allDone = this.state.index === this.state.sequence.length - 1;
+      var props = this.state.sequence[this.state.index + 1] || {};
       var mergeable = typeof value !== 'number' && !allDone;
       this.setState({
         index: allDone ? this.state.index : this.state.index + 1,
@@ -415,11 +430,11 @@ var Chain = React.createClass({
     }
   },
   render: function render() {
-    var _this3 = this;
+    var _this4 = this;
 
-    var props = this.props.sequence[this.state.index];
+    var props = this.state.sequence[this.state.index];
     var fn = function fn(val) {
-      return _this3.props.children(val, _this3.state.done);
+      return _this4.props.children(val, _this4.state.done);
     };
     return this.state.done ? fn(this.state.value, true) : React.createElement(
       Ease,
