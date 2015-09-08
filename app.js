@@ -44,11 +44,11 @@ export const Chained = React.createClass({
     return (
       <div>
         <Chain sequence={[
-          {from: {left: 0, top: 0, opacity: 1}, to: {left: 100, top: 100}},
-          {from: {left: 50}, to: {top: 50}, ease: 'easeOutCubic'},
-          {to: {opacity: 0}, duration: 500, delay: 400},
-          {to: {opacity: 0.8}}]} repeat={3}>
-            {(val, done) => <div style={val}>sweet! {done ? 'done!' : 'running...'}</div>}
+          {from: {step: 0, left: 0, top: 0, opacity: 1}, to: {step: 1, left: 100, top: 100}},
+          {from: {left: 50}, to: {step: 2, top: 50}, ease: 'easeOutCubic'},
+          {to: {step: 3, opacity: 0}, duration: 500, delay: 400},
+          {to: {step: 4, opacity: 0.8}}]} repeat={Infinity}>
+            {(val, done) => <div style={val}>sweet! {done ? 'done!' : <pre>{JSON.stringify(val, null, ' ')}</pre>}</div>}
         </Chain>
       </div>
     );

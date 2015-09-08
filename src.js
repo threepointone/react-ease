@@ -354,7 +354,6 @@ export const Chain = React.createClass({
     let props = this.props.sequence[0];
     return {
       index: 0,
-      sequence: times(this.props.repeat, ()=> this.props.sequence).reduce((arr, el) => arr.concat(el)),
       done: false,
       value: props.from,
       from: props.from,
@@ -369,8 +368,9 @@ export const Chain = React.createClass({
     this.props.onProgress(this.state.index, value, done);
 
     if(done){
-      let allDone = this.state.index === (this.state.sequence.length - 1);
-      let props = this.state.sequence[this.state.index + 1] || {};
+      let length = this.props.repeat * this.props.sequence.length;
+      let allDone = this.state.index === (length - 1);
+      let props = this.props.sequence[((this.state.index + 1) % this.props.sequence.length)] || {};
       let mergeable = ((typeof value !== 'number') && !allDone);
       this.setState({
         index: allDone ? this.state.index : this.state.index + 1,
@@ -382,7 +382,7 @@ export const Chain = React.createClass({
     }
   },
   render(){
-    let props = this.state.sequence[this.state.index];
+    let props = this.props.sequence[this.state.index % this.props.sequence.length];
     let fn = val => this.props.children(val, this.state.done);
     return this.state.done ?
       fn(this.state.value, true) :
