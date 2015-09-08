@@ -56,33 +56,3 @@ export const Chained = React.createClass({
 });
 
 
-
-// export const path = [
-//   '10',
-//   '5',
-//   '5',
-//   '3',
-//   '2'
-// ];
-
-// function toXY(i){
-//   return {
-//     start: {},
-//     end: {},
-//     duration:
-//   }
-// }
-
-// path.map( (p, i) => {
-//   let pt = toXY(i);
-//   <Chain sequence={[
-//     {from: {}}
-//   ]}>
-
-//   </Chain>
-// });
-
-
-
-
-

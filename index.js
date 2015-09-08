@@ -10,13 +10,7 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var React;
-try {
-  React = require('react-native');
-} catch (e) {
-  React = require('react');
-}
-// the above bit should get better after https://github.com/facebook/react/issues/3220
+var React = require('react');
 
 // pick up raf
 var root = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : undefined;

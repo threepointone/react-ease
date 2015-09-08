@@ -1,9 +1,4 @@
-var React;
-try{ React = require('react-native'); }
-catch(e){ React = require('react'); }
-// the above bit should get better after https://github.com/facebook/react/issues/3220
-
-
+var React = require('react');
 
 // pick up raf
 let root = (typeof window !== 'undefined') ? window : ((typeof global !== 'undefined') ? global : this);
@@ -13,7 +8,7 @@ let noop = () => {};
 
 function times(n, fn){
   var arr = [];
-  for(var i= 0; i<n; i++){
+  for(var i = 0; i < n; i++){
     arr.push(fn(i));
   }
   return arr;
