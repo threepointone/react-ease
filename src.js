@@ -6,14 +6,6 @@ export const raf = root.requestAnimationFrame || root.webkitRequestAnimationFram
 
 let noop = () => {};
 
-function times(n, fn){
-  var arr = [];
-  for(var i = 0; i < n; i++){
-    arr.push(fn(i));
-  }
-  return arr;
-}
-
 // penner's easing equations
 export const easings = {
   default: 'easeOutQuad',
