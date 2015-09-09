@@ -2,10 +2,10 @@
   "name": "react-ease",
   "version": "1.0.6",
   "description": "i like to move it move it",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "mocha",
-    "build": "babel src.js -o index.js && babel native-src.js -o native.js",
+    "build": "babel src -d lib",
     "start": "HOT=1 babel-node dev.js",
     "dev": "babel-node dev.js"
   },

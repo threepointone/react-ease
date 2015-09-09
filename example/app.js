@@ -1,5 +1,5 @@
 import React from 'react';
-import {Ease, Chain} from './src';
+import {Ease, Chain} from '../src';
 
 let styles = {};
 

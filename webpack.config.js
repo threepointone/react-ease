@@ -4,11 +4,11 @@ let config = {
   devtool: 'source-map',
   target: 'web',
   entry: {
-    entry: ['./entry.js']
+    entry: ['./example/entry.js']
   },
   output: {
     path: __dirname,
-    filename: '[name].build.js',
+    filename: '/example/bundle.js',
     publicPath: '/'
   },
   module: {
