@@ -1,6 +1,6 @@
 {
   "name": "react-ease",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "i like to move it move it",
   "main": "./lib/index.js",
   "scripts": {
